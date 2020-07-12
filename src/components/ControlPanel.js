@@ -3,16 +3,13 @@ import {store} from "../store";
 
 function ControlPanel() {
     const {state, dispatch} = useContext(store);
-    console.log(state.data)
     return <div>
-        <p>{state.count}</p>
-        <p>{state.data}</p>
-        <button class="myButton" onClick={() => dispatch({type: 's1'})}>Global</button>
-        <button class="myButton" onClick={() => dispatch({type: 's2'})}>U.S.A</button>
-        <button class="myButton" onClick={() => dispatch({type: 's3'})}>Spain</button>
-        <button class="myButton" onClick={() => dispatch({type: 's4'})}>Italy</button>
-        <button class="myButton" onClick={() => dispatch({type: 's5'})}>France</button>
-        <button class="myButton" onClick={() => dispatch({type: 's6'})}>Germany</button>
+        <p>{state.region}</p>
+        <button className="myButton" onClick={() => dispatch({type: 's1'})}>Abruzzo,Italy</button>
+        <button className="myButton" onClick={() => dispatch({type: 's2'})}>Amazonas,Brazil</button>
+        <button className="myButton" onClick={() => dispatch({type: 's3'})}>Fujian,China</button>
+        <button className="myButton" onClick={() => dispatch({type: 's4'})}>Gabon,Gabon</button>
+        <button className="myButton" onClick={() => dispatch({type: 's5'})}>Serbia,Serbia</button>
     </div>;
 }
 

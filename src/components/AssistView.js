@@ -5,8 +5,7 @@ function AssistView() {
     const {state} = useContext(store);
     
     return <div>
-        <p>{state.data}</p>
-        <p>{state.count}</p>
+        <p>{state.region}</p>
     </div>;
 }
 

@@ -4,6 +4,7 @@ import { populationDataFemale } from "./DataFemale";
 import { populationDataMale } from "./DataMale";
 
 class DetailView extends Component {
+  
     getOption = () => {
         let districts = [];
         let years = [];
@@ -156,7 +157,7 @@ class DetailView extends Component {
         return (
           <ReactEcharts
             option={this.getOption()}
-            style={{ height: "80vh", left: 0, top: 0, width: "85vw" }}
+            style={{ height: "80vh", left: 0, top: 0, width: "75vw" }}
             opts={{ renderer: "svg" }}
           />
         );
