@@ -2,11 +2,11 @@ import React, {useContext} from 'react';
 import {store} from "../store";
 
 function AssistView() {
-    const {state, dispatch} = useContext(store);
-
+    const {state} = useContext(store);
+    
     return <div>
+        <p>{state.data}</p>
         <p>{state.count}</p>
-        <button onClick={() => dispatch({type: 'increment'})}>add</button>
     </div>;
 }
 

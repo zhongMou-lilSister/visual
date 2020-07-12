@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 import {store} from "../store";
 
+
 function Overview() {
-    const {state, dispatch} = useContext(store);
+    const {state} = useContext(store);
 
     return <div>
         <p>{state.count}</p>
-        <button onClick={() => dispatch({type: 'increment'})}>add</button>
     </div>;
 }
 
