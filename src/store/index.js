@@ -4,6 +4,8 @@ import {fetchCsvData} from "./api";
 const initialState = {
     region: null,
     country: null,
+    latitude: null,
+    longitude: null,
     date: null,
     cases: null,
     new: null,
@@ -21,36 +23,51 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 region: "Abruzzo,Italy",
+                country: "Italy",
+                latitude: 42.1920119,
+                longitude: 13.7289167,
                 left: 0, 
-                right: 191
+                right: 190
             };
         case 's2':
             return {
                 ...state,
                 region: "Amazonas,Brazil", 
+                country: "Brazil",
+                latitude: -65.8560646,
+                longitude: -3.4168427,
                 left: 1922,
-                right:2113
+                right:2112
             };
         case 's3':
             return {
                 ...state,
                 region: "Fujian,China", 
+                country: "China",
+                latitude: 26.4836842,
+                longitude: 117.9249002,
                 left: 17858,
-                right: 18049
+                right: 18048
             };
         case 's4':
             return {
                 ...state,
                 region: "Gabon,Gabon", 
+                country: "Gabon",
+                latitude: -0.803689,
+                longitude: 11.609444,
                 left: 18050,
-                right: 18241
+                right: 18240
             };
         case 's5':
             return {
                 ...state,
                 region: "Serbia,Serbia", 
+                country: "Serbia",
+                latitude: 44.016521,
+                longitude: 21.005859,
                 left: 49154,
-                right: 49345
+                right: 49344
             };
         case 'init':
             // region: null,

@@ -5,6 +5,7 @@ function ControlPanel() {
     const {state, dispatch} = useContext(store);
     return <div>
         <p>{state.region}</p>
+        <p>{state.latitude}+{state.longitude}</p>
         <button className="myButton" onClick={() => dispatch({type: 's1'})}>Abruzzo,Italy</button>
         <button className="myButton" onClick={() => dispatch({type: 's2'})}>Amazonas,Brazil</button>
         <button className="myButton" onClick={() => dispatch({type: 's3'})}>Fujian,China</button>
