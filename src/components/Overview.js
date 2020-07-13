@@ -7,7 +7,6 @@ function Overview() {
 
     const getOption = () => {
             if (state.left != null){
-                console.log(state.cases[0].slice(64, 69))
                 return {
                     xAxis: {
                         type: 'category',
