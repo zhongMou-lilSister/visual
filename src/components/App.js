@@ -37,13 +37,13 @@ const useStyles = makeStyles(theme => ({
     overview: {
         position: 'absolute',
         top: 70,
-        bottom: 400,
+
         left: 280,
         right: 70,
     },
     detailView: {
         position: 'absolute',
-        bottom: 70,
+        bottom: 220,
         height: 320,
         left: 280,
         right: 70,
