@@ -5,6 +5,7 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import {StateProvider} from "./store";
 
+// StateProvider提供了全局的数据，维护数据处理的逻辑；而App是界面UI内容，使用数据绘制内容。
 ReactDOM.render(
   <StateProvider>
       <App/>
