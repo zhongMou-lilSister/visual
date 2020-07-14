@@ -93,7 +93,7 @@ function OverView() {
     style={{ height: "35vh", left: 0, top: 0, width: "30vw" }}
     opts={{ renderer: "svg" }}/></div>
     <div className="box2">
-    <iframe src="http://liunick2000.club/index714.html" width='750' height='300' title="navigation" ></iframe>
+    <iframe src="http://liunick2000.club/index7142.html" width='500' height='325' title="navigation"></iframe>
     </div>
     </div>
 }
