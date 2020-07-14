@@ -5,8 +5,8 @@ import {store} from "../store";
 function Overview() {
     const {state} = useContext(store);
     
-    return <div>
-        <iframe src="http://liunick2000.club/index714.html" width='1000' height='300' title="navigation" ></iframe>
+    return <div id="ljh" width='100%' height='50%'>
+        <iframe src="http://liunick2000.club/index7142.html" width='100%' height='325' title="navigation"></iframe>
     </div>;
 }
 
