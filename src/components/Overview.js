@@ -59,19 +59,19 @@ export default function SimpleTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Cases" {...a11yProps(0)} />
+          <Tab label="Death" {...a11yProps(1)} />
+          <Tab label="New_Cases" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
       <iframe src="http://liunick2000.club/visual/model_bmap.html" width='100%' height='400' title="navigation"></iframe>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <iframe src="http://liunick2000.club/visual/model_bmap.html" width='100%' height='400' title="navigation"></iframe>
+      <iframe src="http://liunick2000.club/visual/model_bmap_death.html" width='100%' height='400' title="navigation"></iframe>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <iframe src="http://liunick2000.club/visual/model_bmap.html" width='100%' height='400' title="navigation"></iframe>
+      <iframe src="http://liunick2000.club/visual/model_bmap_deta.html" width='100%' height='400' title="navigation"></iframe>
       </TabPanel>
     </div>
   );
