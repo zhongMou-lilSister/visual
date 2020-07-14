@@ -17,6 +17,7 @@ function Detailview() {
                         TempArray1.push(TempArray[i]);
                     } }
                 let TempMin = Math.min(...TempArray1) -3 //减去3是为了不让数据点和x轴重合
+                
                 return {
                     title: {
                         text: 'Relationship between new cases and temperature',
