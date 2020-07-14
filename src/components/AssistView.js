@@ -3,10 +3,8 @@ import {store} from "../store";
 
 function AssistView() {
     const {state} = useContext(store);
-    
-    return <div>
-        <p>{state.region}</p>
-    </div>;
+    const {dispatch} = useContext(store);
+    return <div></div>;
 }
 
 export default AssistView;

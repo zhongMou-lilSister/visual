@@ -2,43 +2,100 @@ import React, {useContext} from 'react';
 import {store} from "../store";
 import ReactEcharts from "echarts-for-react";
 
-function Overview() {
+function OverView() {
     const {state} = useContext(store);
 
     const getOption = () => {
-            if (state.left != null){
-                return {
-                    xAxis: {
-                        type: 'category',
-                        data: state.date[0].slice(state.left, state.right)
-                    },
-                    yAxis: {
-                        type: 'value'
-                    },
-                    series: [{
-                        data: state.cases[0].slice(state.left, state.right),
-                        type: 'line'
-                    }]
+        let data_ = [];
+        if (state.left != null){
+          for (let index = state.left; index <= state.right; index++) {
+            if (state.new[0][index] < 0)state.new[0][index] = 0;
+            data_[index-state.left] = [state.uvb[0][index], state.new[0][index]];
+          }
+            return {
+              title:{text: 'Impact of UVB',
+            left: 'center'},
+              animation: true,
+              tooltip: {
+                padding:10,
+                trigger: 'item',
+                axisPointer: {
+                    type: 'cross'
                 }
+              },
+              xAxis: {
+                scale: true
+              },
+              yAxis: {
+                  scale: true
+              },
+              series: [{
+                
+                  type: 'scatter',
+                  data: data_,
+                  itemStyle: {
+                    normal: {
+                        opacity: 0.5
+                    },
+                    color: 125
+                  }
+              }]
             }
-            else{
-                return {
-                    xAxis: {
-                        type: 'category',
-                        data: [1, 2, 3]
-                    },
-                    yAxis: {
-                        type: 'value'
-                    },
-                    series: [{
-                        data: [1, 2, 3],
-                        type: 'line'
-                    }]
+        }
+        else{
+            return {
+              animation: true,
+              tooltip: {
+                trigger: 'item',
+                axisPointer: {
+                    type: 'cross'
                 }
-            }
+              },
+              xAxis: {
+                  scale: true
+              },
+              yAxis: {
+                  scale: true
+              },
+              dataZoom: [
+                {
+                    type: 'slider',
+                    show: true,
+                    xAxisIndex: [0],
+                    start: 1,
+                    end: 35
+                },
+                {
+                    type: 'inside',
+                    xAxisIndex: [0],
+                    start: 1,
+                    end: 35
+                }
+            ],
+    
+              series: [{
+                  type: 'scatter',
+                  data: [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]],
+                  itemStyle: {
+                    normal: {
+                        opacity: 0.5
+                    },
+                    color: 125
+                  }
+                  
+              }]
+          }
+        }
     };
 
-    return <ReactEcharts option={getOption()}/>;
+    return <div>
+      <div className="box1">    <ReactEcharts option={getOption()}
+    style={{ height: "35vh", left: 0, top: 0, width: "30vw" }}
+    opts={{ renderer: "svg" }}/></div>
+    <div className="box2">
+    <iframe src="http://liunick2000.club/index714.html" width='750' height='300' title="navigation" ></iframe>
+    </div>
+    </div>
 }
 
-export default Overview;
+export default OverView;
