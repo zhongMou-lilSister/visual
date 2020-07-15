@@ -23,13 +23,13 @@ const useStyles = makeStyles(theme => ({
     assistView: {
         position: 'absolute',
         top: 0,
-        height: 110,
+        height: 130,
         left: 70,
         width: 200,
     },
     controlPanel: {
         position: 'absolute',
-        top: 110,
+        top: 130,
         bottom: 230,
         left: 70,
         width: 200,
