@@ -696,7 +696,8 @@ option = {
         left: 'center'
     },
     tooltip : {
-        trigger: 'item'
+        trigger: 'item',
+        formatter: "<div><p>Region：{b}</p><p>经度,纬度,Cases指数</p>"+"{c}",
     },
     bmap: {
         center: [10.114129, 26.550339],
@@ -812,7 +813,7 @@ option = {
                 return val[2] / 10;
             },
             label: {
-                formatter: '{c}',
+                formatter: '{b}',
                 position: 'right',
                 show: false
             },
