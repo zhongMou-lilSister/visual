@@ -6,7 +6,7 @@ import {makeStyles} from "@material-ui/core";
 import AssistView from "./AssistView";
 import ControlPanel from "./ControlPanel";
 import DetailView from "./DetailView";
-import Overview from "./Overview";
+import OverView from "./Overview";
 
 // 这是JSS的写法，相当于声明了一些css的类
 const useStyles = makeStyles(theme => ({
@@ -17,35 +17,35 @@ const useStyles = makeStyles(theme => ({
         overflow: 'hidden',
     },
     view: {
-        border: '1px solid black',
+        border: '2px solid rgba(50, 150, 220, .4)',
         // borderRadius: '5px',
-    },
-    controlPanel: {
-        position: 'absolute',
-        top: 70,
-        height: 100,
-        left: 70,
-        width: 200,
     },
     assistView: {
         position: 'absolute',
-        top: 180,
-        bottom: 70,
+        top: 70,
+        height: 110,
         left: 70,
         width: 200,
     },
-    overview: {
+    controlPanel: {
         position: 'absolute',
-        top: 70,
+        top: 180,
         bottom: 400,
-        left: 280,
-        right: 70,
+        left: 70,
+        width: 200,
     },
     detailView: {
         position: 'absolute',
+        top: 70,
+        bottom: 400,
+        left: 271,
+        right: 70,
+    },
+    overView: {
+        position: 'absolute',
         bottom: 70,
-        height: 320,
-        left: 280,
+        height: 329,
+        left: 70,
         right: 70,
     },
 }))
@@ -58,10 +58,10 @@ function App() {
     // 可视化项目中，若干视图一般采用绝对布局，方便后续调整各个视图的位置与大小
     // 目前四个视图都是一样的，查看AssistView的注释
     return <div className={classes.root}>
-        <div className={clsx(classes.view, classes.controlPanel)}><AssistView/></div>
-        <div className={clsx(classes.view, classes.assistView)}><ControlPanel/></div>
-        <div className={clsx(classes.view, classes.overview)}><DetailView/></div>
-        <div className={clsx(classes.view, classes.detailView)}><Overview/></div>
+        <div className={clsx(classes.view, classes.assistView)}><AssistView/></div>
+        <div className={clsx(classes.view, classes.controlPanel)}><ControlPanel/></div>
+        <div className={clsx(classes.view, classes.overView)}><OverView/></div>
+        <div className={clsx(classes.view, classes.detailView)}><DetailView/></div>
     </div>;
 }
 
