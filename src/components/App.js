@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         position: 'relative',
         width: '100vw',
         height: '100vh',
-        overflow: 'hidden',
+        overflow: 'visible',
     },
     view: {
         border: '2px solid rgba(50, 150, 220, .4)',
@@ -22,31 +22,32 @@ const useStyles = makeStyles(theme => ({
     },
     assistView: {
         position: 'absolute',
-        top: 70,
+        top: 0,
         height: 110,
         left: 70,
         width: 200,
     },
     controlPanel: {
         position: 'absolute',
-        top: 180,
-        bottom: 400,
+        top: 110,
+        bottom: 230,
         left: 70,
         width: 200,
     },
     detailView: {
         position: 'absolute',
-        top: 70,
-        bottom: 400,
+        top: 0,
+        //bottom: 230,
         left: 271,
         right: 70,
     },
     overView: {
         position: 'absolute',
-        bottom: 70,
+        //bottom: 70,
         height: 329,
         left: 70,
         right: 70,
+        top: 420,
     },
 }))
 

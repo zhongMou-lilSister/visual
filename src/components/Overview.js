@@ -65,13 +65,13 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-      <iframe src="http://liunick2000.club/visual/model_bmap.html" width='100%' height='400' title="navigation"></iframe>
+      <iframe src="model_bmap.html" width='100%' height='400' title="navigation"></iframe>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <iframe src="http://liunick2000.club/visual/model_bmap_death.html" width='100%' height='400' title="navigation"></iframe>
+      <iframe src="model_bmap_death.html" width='100%' height='400' title="navigation"></iframe>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <iframe src="http://liunick2000.club/visual/model_bmap_deta.html" width='100%' height='400' title="navigation"></iframe>
+      <iframe src="model_bmap_deta.html" width='100%' height='400' title="navigation"></iframe>
       </TabPanel>
     </div>
   );
