@@ -266,7 +266,7 @@ export default function ScrollableTabsButtonForce() {
 //   紫外线的图表
   const getOption2 = () => {
     if (state.left != null){
-        // 计算uvb的最低值，将其作为Y轴下限
+        /* // 计算uvb的最低值，将其作为Y轴下限
         let UvbArray = state.uvb[0].slice(state.left, state.right).map(Number)
         let UvbArray1 = []
         // 建了一个新数组UvbArray1来保存原数组中非0的数
@@ -382,7 +382,58 @@ export default function ScrollableTabsButtonForce() {
                     data: state.new[0].slice(state.left, state.right)
                 }
             ]
-        }
+        } */
+        let data_ = [];
+        for (let index = state.left; index <= state.right; index++) {
+            if (state.new[0][index] < 0)state.new[0][index] = 0;
+            data_[index-state.left] = [state.uvb[0][index], state.new[0][index]];
+          }
+            return {
+              title:{text: 'Impact of UVB',
+            left: 'center'},
+            toolbox: {
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: [
+                {
+                    type: 'slider',
+                    show: true,
+                    xAxisIndex: [0],
+                    start: 0,
+                    end: 3500
+                },
+                {
+                    type: 'inside',
+                    xAxisIndex: [0],
+                    start: 0,
+                    end: 3500
+                }
+            ],
+              animation: true,
+              xAxis: {
+                scale: true
+              },
+              yAxis: {
+                  scale: true
+              },
+              series: [{
+                  type: 'scatter',
+                  data: data_,
+                  itemStyle: {
+                    normal: {
+                        opacity: 0.5
+                    },
+                    color: 125
+                  }
+              }]
+            }
+
     }
     else{
         return {

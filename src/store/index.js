@@ -31,7 +31,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 left: state.region[0].findIndex((n) => n === action.type) + 1, 
-                right: state.region[0].findIndex((n) => n === action.type) + 191
+                right: state.region[0].findIndex((n) => n === action.type) + 188
             };
         case 'init':
             // region: null,
