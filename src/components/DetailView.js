@@ -17,7 +17,6 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import ThumbDown from '@material-ui/icons/ThumbDown';
-import ThumbUp from '@material-ui/icons/ThumbUp';
 
 
 
@@ -420,7 +419,7 @@ export default function ScrollableTabsButtonForce() {
           <Tab label="Polulation" icon={<SupervisorAccountIcon />} {...a11yProps(3)} />
           <Tab label="Item Five" icon={<ShoppingBasket />} {...a11yProps(4)} />
           <Tab label="Item Six" icon={<ThumbDown />} {...a11yProps(5)} />
-          <Tab label="Item Seven" icon={<ThumbUp />} {...a11yProps(6)} />
+          <Tab label="Migrate Data"  {...a11yProps(6)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -439,10 +438,10 @@ export default function ScrollableTabsButtonForce() {
         Item Five
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Item Six
+      123
       </TabPanel>
       <TabPanel value={value} index={6}>
-        Item Seven
+      <iframe runat="server" id="iframes1" src="http://liunick2000.club/fenyeceshi/line-stack.php?city=温州" width="100%" height="290"  title="navigation" scrolling="no"></iframe>
       </TabPanel>
     </div>
   );

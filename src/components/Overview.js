@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+    padding:0,
   },
 }));
 
@@ -58,10 +59,11 @@ export default function SimpleTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" >
           <Tab label="Cases" {...a11yProps(0)} />
           <Tab label="Death" {...a11yProps(1)} />
-          <Tab label="New_Cases" {...a11yProps(2)} />
+          <Tab label="New Cases" {...a11yProps(2)} />
+          <Tab label="Magrate Data" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -72,6 +74,9 @@ export default function SimpleTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
       <iframe src="model_bmap_deta.html" width='100%' height='400' title="navigation"></iframe>
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+      <iframe runat="server" id="iframes2" src="http://liunick2000.club/fenyeceshi/model_bmap.php?data=2020-02-29&city=" width="100%" height="400"  title="navigation" scrolling="no"></iframe>
       </TabPanel>
     </div>
   );

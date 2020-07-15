@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
 import {store} from "../store";
-import ReactEcharts from "echarts-for-react";
 
 function AssistView() {
     const {state} = useContext(store);
-    const {dispatch} = useContext(store);
-    return <div></div>;
+    console.log(state.case)
+    return <div>
+    <p>2020.07.10</p>
+</div>;
 }
 
 export default AssistView;
