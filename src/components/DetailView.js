@@ -391,6 +391,7 @@ export default function ScrollableTabsButtonForce() {
             return {
               title:{text: 'Impact of UVB',
             left: 'center'},
+            tooltip:{},
             toolbox: {
                 feature: {
                     dataZoom: {
