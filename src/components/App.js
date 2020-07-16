@@ -43,8 +43,8 @@ const useStyles = makeStyles(theme => ({
     },
     overView: {
         position: 'absolute',
-        //bottom: 70,
-        height: 329,
+        // bottom: 70,
+        height: 415,
         left: 70,
         right: 70,
         top: 420,

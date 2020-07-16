@@ -436,22 +436,109 @@ export default function ScrollableTabsButtonForce() {
 
     }
     else{
-        return {
-            xAxis: {
-                type: 'category',
-                data: [1, 2, 3]
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [{
-                data: [1, 2, 3],
-                type: 'line'
-            }]
-        }
+        let data2 = {
+            "name": "Pandemic",
+            "children": [
+                {
+                    "name": "Geographical",
+                    "children": [
+                        {"name": "Region Area", "value": 4116},
+                        {"name": "Population", "value": 5000}
+                    ]
+                },
+                {
+                    "name": "Natural",
+                    "children": [
+                        {"name": "UVB Value", "value": 2105},
+                        {"name": "Temperature", "value": 1316},
+                        {"name": "Dewpoint", "value": 3151},
+                   ]
+                },
+                {
+                    "name": "Economic",
+                    "children": [
+                        {"name": "GDP", "value": 8833}
+                   ]
+                }
+            ]
+          };
+            return {
+              title: {
+                text: 'A study on the possible variables related to the pandemic',
+                left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    triggerOn: 'mousemove'
+                },
+                series:[
+                    {
+                        type: 'tree',
+                        name: 'tree2',
+                        data: [data2],
+            
+                        top: '20%',
+                        left: '10%',
+                        bottom: '12%',
+                        right: '10%',
+            
+                        symbolSize: 12,
+            
+                        label: {
+                            position: 'left',
+                            verticalAlign: 'middle',
+                            align: 'right'
+                        },
+            
+                        leaves: {
+                            label: {
+                                position: 'right',
+                                verticalAlign: 'middle',
+                                align: 'left'
+                            }
+                        },
+            
+                        expandAndCollapse: true,
+            
+                        animationDuration: 550,
+                        animationDurationUpdate: 750
+                    }
+                ]
+            }
     }
   };
-
+  const getOption3 = () => {
+    if (state.left != null){
+    let data_ = [];
+    for (let index = 189; index <= 62401; index++) {
+        if (state.GDP[0][index] < 600000000000)
+            data_[parseInt((index - 189) / 192)] = [state.GDP[0][index], state.cases[0][index]];
+      }
+      return {
+        title:{text: 'GDP-Total Cases Up to Date',
+        left: 'center'},
+        xAxis: {
+            scale: true,
+            name: 'GDP'
+        },
+        yAxis: {
+            scale: true,
+            name: 'Total cases'
+        },
+        series: [{
+            type: 'effectScatter',
+            symbolSize: 8,
+            data: [
+                [state.GDP[0][state.right], state.cases[0][state.right]]
+            ]
+        }, {
+            type: 'scatter',
+            symbolSize: 4,
+            data: data_,
+        }]
+      }
+  }
+}
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -480,7 +567,7 @@ export default function ScrollableTabsButtonForce() {
         <ReactEcharts option={getOption2()}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <ReactEcharts option={getOption3()}/>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Four

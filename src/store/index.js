@@ -19,6 +19,7 @@ const initialState = {
     uvb: null,
     left: null,
     right: null,
+    gdp: null
 };
 
 // 不同请求的处理
@@ -106,6 +107,7 @@ const reducer = (state, action) => {
             const newUvb = [];
             const newLat = [];
             const newLog = [];
+            const newGDP = [];
 
             // TODO: use action.payload to update newData
             newRegion.push(action.payload.map(item => item.region_name));
@@ -119,6 +121,7 @@ const reducer = (state, action) => {
             newUvb.push(action.payload.map(item => item.uvb));
             newLat.push(action.payload.map(item => item.latitude));
             newLog.push(action.payload.map(item => item.longitude));
+            newGDP.push(action.payload.map(item => item.gdp));
 
             return {
                 ...state,
@@ -132,7 +135,8 @@ const reducer = (state, action) => {
                 temp: newTemp,
                 uvb: newUvb,
                 latitude: newLat,
-                longitude: newLog
+                longitude: newLog,
+                GDP: newGDP
             };
         default:
             throw new Error();
