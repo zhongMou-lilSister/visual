@@ -6,6 +6,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,10 +70,10 @@ export default function ScrollableTabsButtonForce() {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="Cases"  {...a11yProps(0)} />
-          <Tab label="Death"  {...a11yProps(1)} />
-          <Tab label="New Cases"  {...a11yProps(2)} />
-          <Tab label="Migration"  {...a11yProps(3)} />
+          <Tooltip title="total cases" arrow><Tab label="Cases"  {...a11yProps(0)} /></Tooltip>
+          <Tooltip title="cases of deaths" arrow><Tab label="Death"  {...a11yProps(1)} /></Tooltip>
+          <Tooltip title="new cases" arrow><Tab label="New Cases"  {...a11yProps(2)} /></Tooltip>
+          <Tooltip title="travel intensity" arrow><Tab label="Migration"  {...a11yProps(3)} /></Tooltip>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

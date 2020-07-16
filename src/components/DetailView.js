@@ -9,17 +9,17 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import WavesIcon from '@material-ui/icons/Waves';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import OpacityIcon from '@material-ui/icons/Opacity';
+import PublicIcon from '@material-ui/icons/Public';
+import CommuteIcon from '@material-ui/icons/Commute';
 
-import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
-import ThumbDown from '@material-ui/icons/ThumbDown';
-
-
-
+// 做tab分页选项卡
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -575,13 +575,13 @@ export default function ScrollableTabsButtonForce() {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="Temperature" icon={<AcUnitIcon />} {...a11yProps(0)} />
-          <Tab label="UVB Value" icon={<WavesIcon />} {...a11yProps(1)} />
-          <Tab label="GDP" icon={<MonetizationOnIcon />} {...a11yProps(2)} />
-          <Tab label="Polulation" icon={<SupervisorAccountIcon />} {...a11yProps(3)} />
-          <Tab label="Item Five" icon={<ShoppingBasket />} {...a11yProps(4)} />
-          <Tab label="Item Six" icon={<ThumbDown />} {...a11yProps(5)} />
-          <Tab label="Migrate Data"  {...a11yProps(6)} />
+            <Tooltip title="temperature" arrow><Tab label="Temperature" icon={<AcUnitIcon />} {...a11yProps(0)} /></Tooltip>
+            <Tooltip title="uvb value" arrow><Tab label="UVB Value" icon={<WavesIcon />} {...a11yProps(1)} /></Tooltip>
+            <Tooltip title="GDP" arrow><Tab label="GDP" icon={<MonetizationOnIcon />} {...a11yProps(2)} /></Tooltip>
+            <Tooltip title="population" arrow><Tab label="Polulation" icon={<SupervisorAccountIcon />} {...a11yProps(3)} /></Tooltip>
+            <Tooltip title="dew point" arrow><Tab label="dew point" icon={<OpacityIcon />} {...a11yProps(4)} /></Tooltip>
+            <Tooltip title="land_KM2" arrow><Tab label="Region Area" icon={<PublicIcon />} {...a11yProps(5)} /></Tooltip>
+            <Tooltip title="migration intensity in Wenzhou" arrow><Tab label="Migration Intensity"  icon={<CommuteIcon/>} {...a11yProps(6)} /></Tooltip>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
