@@ -512,7 +512,6 @@ export default function ScrollableTabsButtonForce() {
     if (state.left != null){
     let data_ = [];
     for (let index = 189; index <= 62401; index++) {
-        if (state.GDP[0][index] < 600000000000)
             data_[parseInt((index - 189) / 192)] = [state.GDP[0][index], state.cases[0][index]];
       }
       return {
@@ -522,6 +521,30 @@ export default function ScrollableTabsButtonForce() {
             scale: true,
             name: 'GDP'
         },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        dataZoom: [
+            {
+                type: 'slider',
+                show: true,
+                xAxisIndex: [0],
+                start: 0,
+                end: 5000000000000
+            },
+            {
+                type: 'inside',
+                xAxisIndex: [0],
+                start: 0,
+                end: 5000000000000
+            }
+        ],
         yAxis: {
             scale: true,
             name: 'Total cases'

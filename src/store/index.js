@@ -97,6 +97,7 @@ const reducer = (state, action) => {
             // temp: null,
             // uvb: null
             const newRegion = [];
+            const newCountry = [];
             const newDate = [];
             const newCases = []; 
             const newNew = [];
@@ -122,6 +123,7 @@ const reducer = (state, action) => {
             newLat.push(action.payload.map(item => item.latitude));
             newLog.push(action.payload.map(item => item.longitude));
             newGDP.push(action.payload.map(item => item.gdp));
+            newCountry.push(action.payload.map(item => item.country));
 
             return {
                 ...state,
@@ -136,7 +138,8 @@ const reducer = (state, action) => {
                 uvb: newUvb,
                 latitude: newLat,
                 longitude: newLog,
-                GDP: newGDP
+                GDP: newGDP,
+                country: newCountry
             };
         default:
             throw new Error();
