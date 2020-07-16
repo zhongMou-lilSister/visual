@@ -15,7 +15,7 @@ function AssistView() {
     }
     else{
         return <div className="addicon">
-        <h4>Choose a City</h4>
+        <h4>Choose a Region</h4>
         </div>;
     }
 }
