@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         overflow: 'visible',
     },
     view: {
-        border: '2px solid rgba(50, 150, 220, .4)',
+        border: '2px solid rgba(126, 142, 154, 0.4)',
         // borderRadius: '5px',
     },
     assistView: {

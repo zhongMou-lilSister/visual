@@ -71,7 +71,7 @@ export default function ScrollableTabsButtonForce() {
   };
   const {state} = useContext(store);
 //   温度的图表
-  const getOption1 = () => {
+  const getOption0 = () => {
     if (state.left != null){
         // 计算温度的最低值，将其作为Y轴下限
         let TempArray = state.temp[0].slice(state.left, state.right).map(Number)
@@ -85,7 +85,7 @@ export default function ScrollableTabsButtonForce() {
         
         return {
             title: {
-                text: `Relationship between new cases and temperature in ${state.region[0][state.left]}`,
+                text: `Relationship between New Cases and Temperature in ${state.region[0][state.left]}`,
                 subtext: 'XXXXX',
                 left: 'center'
             },
@@ -164,7 +164,7 @@ export default function ScrollableTabsButtonForce() {
                 },
                 {
                     gridIndex: 1,
-                    name: 'new',
+                    name: 'new cases(per million people)',
                     type: 'value',
                     inverse: true,
                     // max: 1000,
@@ -264,7 +264,7 @@ export default function ScrollableTabsButtonForce() {
      }
   };
 //   紫外线的图表
-  const getOption2 = () => {
+  const getOption1 = () => {
     if (state.left != null){
         /* // 计算uvb的最低值，将其作为Y轴下限
         let UvbArray = state.uvb[0].slice(state.left, state.right).map(Number)
@@ -389,9 +389,12 @@ export default function ScrollableTabsButtonForce() {
             data_[index-state.left] = [state.uvb[0][index], state.new[0][index]];
           }
             return {
-              title:{text: 'Impact of UVB',
-            left: 'center'},
-            tooltip:{},
+              title:{
+                  text: `Relationship between New Cases and UVB in ${state.region[0][state.left]}`,
+                  left: 'center'},
+            tooltip:{
+                formatter:'{a},new cases<br />{c}'
+            },
             toolbox: {
                 feature: {
                     dataZoom: {
@@ -406,25 +409,28 @@ export default function ScrollableTabsButtonForce() {
                     type: 'slider',
                     show: true,
                     xAxisIndex: [0],
-                    start: 0,
-                    end: 3500
+                    start: 10,
+                    end: 100
                 },
                 {
                     type: 'inside',
                     xAxisIndex: [0],
                     start: 0,
-                    end: 3500
+                    end: 100
                 }
             ],
               animation: true,
               xAxis: {
-                scale: true
+                scale: true,
+                name: 'uvb intensity',
               },
               yAxis: {
-                  scale: true
+                  scale: true,
+                  name: 'new cases(per million people)',
               },
               series: [{
                   type: 'scatter',
+                  name: 'uvb',
                   data: data_,
                   itemStyle: {
                     normal: {
@@ -508,18 +514,26 @@ export default function ScrollableTabsButtonForce() {
             }
     }
   };
-  const getOption3 = () => {
+//   GDP图表
+  const getOption2 = () => {
     if (state.left != null){
     let data_ = [];
     for (let index = 189; index <= 62401; index++) {
             data_[parseInt((index - 189) / 192)] = [state.GDP[0][index], state.cases[0][index]];
       }
       return {
-        title:{text: 'GDP-Total Cases Up to Date',
-        left: 'center'},
+        title:{text: 'Relationship between Total Cases and GDP Across the World',
+                left: 'center'},
+        tooltip:{
+            formatter:'GDP,total cases<br />{c}'
+        },
         xAxis: {
             scale: true,
-            name: 'GDP'
+            name: 'GDP($)'
+        },
+        yAxis: {
+            scale: true,
+            name: 'Total cases(per million people)'
         },
         toolbox: {
             feature: {
@@ -536,19 +550,30 @@ export default function ScrollableTabsButtonForce() {
                 show: true,
                 xAxisIndex: [0],
                 start: 0,
-                end: 5000000000000
+                end: 45
+            },
+            {
+                type: 'slider',
+                show: true,
+                yAxisIndex: [0],
+                left: '93%',
+                start: 0,
+                end: 50
             },
             {
                 type: 'inside',
                 xAxisIndex: [0],
                 start: 0,
-                end: 5000000000000
+                end: 45
+            },
+            {
+                type: 'inside',
+                yAxisIndex: [0],
+                start: 0,
+                end: 50
             }
         ],
-        yAxis: {
-            scale: true,
-            name: 'Total cases'
-        },
+        
         series: [{
             type: 'effectScatter',
             symbolSize: 8,
@@ -562,7 +587,349 @@ export default function ScrollableTabsButtonForce() {
         }]
       }
   }
-}
+};
+//   polulation图表
+const getOption3 = () => {
+    if (state.left != null){
+    let data_ = [];
+    for (let index = 189; index <= 62401; index++) {
+            data_[parseInt((index - 189) / 192)] = [state.population[0][index], state.cases[0][index]];
+      }
+      return {
+        title:{text: 'Relationship between Total Cases and Population Across the World',
+                left: 'center'},
+        tooltip:{
+            formatter:'Population,Total cases<br />{c}'
+        },
+        xAxis: {
+            scale: true,
+            name: 'Population'
+        },
+        yAxis: {
+            scale: true,
+            name: 'Total cases(per million people)'
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        dataZoom: [
+            {
+                type: 'slider',
+                show: true,
+                xAxisIndex: [0],
+                start: 0,
+                end: 20
+            },
+            {
+                type: 'slider',
+                show: true,
+                yAxisIndex: [0],
+                left: '93%',
+                start: 0,
+                end: 30
+            },
+            {
+                type: 'inside',
+                xAxisIndex: [0],
+                start: 0,
+                end: 45
+            },
+            {
+                type: 'inside',
+                yAxisIndex: [0],
+                start: 0,
+                end: 50
+            }
+        ],
+        
+        series: [{
+            type: 'effectScatter',
+            symbolSize: 8,
+            data: [
+                [state.population[0][state.right], state.cases[0][state.right]]
+            ]
+        }, {
+            type: 'scatter',
+            symbolSize: 4,
+            data: data_,
+        }]
+      }
+  }
+};
+//   dew point的图表
+const getOption4 = () => {
+    if (state.left != null){
+        // 计算温度的最低值，将其作为Y轴下限
+        let TempArray = state.dewpoint[0].slice(state.left, state.right).map(Number)
+        let TempArray1 = []
+        // 建了一个新数组TempArray1来保存原数组中非0的数
+        for(var i in TempArray){
+            if(TempArray[i]!==0){
+                TempArray1.push(TempArray[i]);
+            } }
+        let TempMin = Math.min(...TempArray1) -3 //减去3是为了不让数据点和x轴重合
+        
+        return {
+            title: {
+                text: `Relationship between New Cases and Dew Point in ${state.region[0][state.left]}`,
+                subtext: 'XXXXX',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    animation: false
+                }
+            },
+            legend: {
+                data: ['dew point', 'new cases'],
+                left: 10
+            },
+            toolbox: {
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            axisPointer: {
+                link: {xAxisIndex: 'all'}
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 40,
+                    end: 60,
+                    xAxisIndex: [0, 1]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 40,
+                    end: 70,
+                    xAxisIndex: [0, 1]
+                }
+            ],
+            grid: [{
+                left: 50,
+                right: 50,
+                height: '35%'
+            }, {
+                left: 50,
+                right: 50,
+                top: '55%',
+                height: '35%'
+            }],
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    axisLine: {onZero: true},
+                    data: state.date[0].slice(state.left, state.right).map(function (str) {
+                        return str.replace('/2020', '');})
+                },
+                {
+                    gridIndex: 1,
+                    type: 'category',
+                    boundaryGap: false,
+                    axisLine: {onZero: true},
+                    data: state.date[0].slice(state.left, state.right).map(function (str) {
+                        return str.replace('/2020', '');}),
+                    position: 'top'
+                }
+            ],
+            yAxis: [
+                {
+                    name: 'dew point(K)',
+                    type: 'value',
+                    // max: 310,
+                    min: TempMin,
+                },
+                {
+                    gridIndex: 1,
+                    name: 'new cases(per million people)',
+                    type: 'value',
+                    inverse: true,
+                    // max: 1000,
+                    
+                }
+            ],
+            series: [
+                {
+                    name: 'dew point',
+                    type: 'line',
+                    symbolSize: 8,
+                    hoverAnimation: false,
+                    data: state.dewpoint[0].slice(state.left, state.right)
+                },
+                {
+                    name: 'new cases',
+                    type: 'line',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    symbolSize: 8,
+                    hoverAnimation: false,
+                    data: state.new[0].slice(state.left, state.right)
+                }
+            ]
+        }
+    }
+    else{
+        let data2 = {
+          "name": "Pandemic",
+          "children": [
+              {
+                  "name": "Geographical",
+                  "children": [
+                      {"name": "Region Area", "value": 4116},
+                      {"name": "Population", "value": 5000}
+                  ]
+              },
+              {
+                  "name": "Natural",
+                  "children": [
+                      {"name": "UVB Value", "value": 2105},
+                      {"name": "Temperature", "value": 1316},
+                      {"name": "Dewpoint", "value": 3151},
+                 ]
+              },
+              {
+                  "name": "Economic",
+                  "children": [
+                      {"name": "GDP", "value": 8833}
+                 ]
+              }
+          ]
+        };
+          return {
+            title: {
+              text: 'A study on the possible variables related to the pandemic',
+              left: 'center'
+              },
+              tooltip: {
+                  trigger: 'item',
+                  triggerOn: 'mousemove'
+              },
+              series:[
+                  {
+                      type: 'tree',
+                      name: 'tree2',
+                      data: [data2],
+          
+                      top: '20%',
+                      left: '10%',
+                      bottom: '12%',
+                      right: '10%',
+          
+                      symbolSize: 12,
+          
+                      label: {
+                          position: 'left',
+                          verticalAlign: 'middle',
+                          align: 'right'
+                      },
+          
+                      leaves: {
+                          label: {
+                              position: 'right',
+                              verticalAlign: 'middle',
+                              align: 'left'
+                          }
+                      },
+          
+                      expandAndCollapse: true,
+          
+                      animationDuration: 550,
+                      animationDurationUpdate: 750
+                  }
+              ]
+          }
+     }
+  };
+//   区域面积的图表
+const getOption5 = () => {
+    if (state.left != null){
+    let data_ = [];
+    for (let index = 189; index <= 62401; index++) {
+            data_[parseInt((index - 189) / 192)] = [state.landkm2[0][index], state.cases[0][index]];
+      }
+      return {
+        title:{text: 'Relationship between Total Cases and Land Area Across the World',
+                left: 'center'},
+        tooltip:{
+            formatter:'Land area,Total cases<br />{c}'
+        },
+        xAxis: {
+            scale: true,
+            name: 'Land area(km2)'
+        },
+        yAxis: {
+            scale: true,
+            name: 'Total cases(per million people)'
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        dataZoom: [
+            {
+                type: 'slider',
+                show: true,
+                xAxisIndex: [0],
+                start: 0,
+                end: 20
+            },
+            {
+                type: 'slider',
+                show: true,
+                yAxisIndex: [0],
+                left: '93%',
+                start: 0,
+                end: 30
+            },
+            {
+                type: 'inside',
+                xAxisIndex: [0],
+                start: 0,
+                end: 45
+            },
+            {
+                type: 'inside',
+                yAxisIndex: [0],
+                start: 0,
+                end: 50
+            }
+        ],
+        
+        series: [{
+            type: 'effectScatter',
+            symbolSize: 8,
+            data: [
+                [state.landkm2[0][state.right], state.cases[0][state.right]]
+            ]
+        }, {
+            type: 'scatter',
+            symbolSize: 4,
+            data: data_,
+        }]
+      }
+  }
+};
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -585,22 +952,22 @@ export default function ScrollableTabsButtonForce() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <ReactEcharts option={getOption1()}/>
+        <ReactEcharts option={getOption0()}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <ReactEcharts option={getOption2()}/>
+        <ReactEcharts option={getOption1()}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <ReactEcharts option={getOption3()}/>
+        <ReactEcharts option={getOption2()}/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        <ReactEcharts option={getOption3()}/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
+        <ReactEcharts option={getOption4()}/>
       </TabPanel>
       <TabPanel value={value} index={5}>
-      123
+        <ReactEcharts option={getOption5()}/>
       </TabPanel>
       <TabPanel value={value} index={6}>
       <iframe runat="server" id="iframes1" src="http://liunick2000.club/fenyeceshi/line-stack.php?city=温州" width="100%" height="290"  title="navigation" scrolling="no"></iframe>
