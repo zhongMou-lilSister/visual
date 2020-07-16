@@ -194,38 +194,38 @@ export default function ScrollableTabsButtonForce() {
     else{
         let data2 = {
           "name": "Pandemic",
+          "label":{"fontSize": 16},
           "children": [
               {
                   "name": "Geographical",
+                  "label":{"fontSize": 16},
                   "children": [
-                      {"name": "Region Area", "value": 4116},
-                      {"name": "Population", "value": 5000}
+                      {"name": "Region Area", "value": 4116,"label":{"fontSize": 16},},
+                      {"name": "Population", "value": 5000,"label":{"fontSize": 16},}
                   ]
               },
               {
                   "name": "Natural",
+                  "label":{"fontSize": 16},
                   "children": [
-                      {"name": "UVB Value", "value": 2105},
-                      {"name": "Temperature", "value": 1316},
-                      {"name": "Dewpoint", "value": 3151},
+                      {"name": "UVB Value", "value": 2105,"label":{"fontSize": 16},},
+                      {"name": "Temperature", "value": 1316,"label":{"fontSize": 16},},
+                      {"name": "Dewpoint", "value": 3151,"label":{"fontSize": 16},},
                  ]
               },
               {
                   "name": "Economic",
+                  "label":{"fontSize": 16},
                   "children": [
-                      {"name": "GDP", "value": 8833}
+                      {"name": "GDP", "value": 8833,"label":{"fontSize": 16},}
                  ]
               }
           ]
         };
           return {
             title: {
-              text: 'A study on the possible variables related to the pandemic',
+              text: 'Study on the Possible Variables Related to the Pandemic',
               left: 'center'
-              },
-              tooltip: {
-                  trigger: 'item',
-                  triggerOn: 'mousemove'
               },
               series:[
                   {
@@ -233,10 +233,10 @@ export default function ScrollableTabsButtonForce() {
                       name: 'tree2',
                       data: [data2],
           
-                      top: '20%',
-                      left: '10%',
-                      bottom: '12%',
-                      right: '10%',
+                      top: '15%',
+                      left: '30%',
+                      bottom: '10%',
+                      right: '30%',
           
                       symbolSize: 12,
           
@@ -444,75 +444,75 @@ export default function ScrollableTabsButtonForce() {
     }
     else{
         let data2 = {
-            "name": "Pandemic",
-            "children": [
-                {
-                    "name": "Geographical",
-                    "children": [
-                        {"name": "Region Area", "value": 4116},
-                        {"name": "Population", "value": 5000}
-                    ]
-                },
-                {
-                    "name": "Natural",
-                    "children": [
-                        {"name": "UVB Value", "value": 2105},
-                        {"name": "Temperature", "value": 1316},
-                        {"name": "Dewpoint", "value": 3151},
-                   ]
-                },
-                {
-                    "name": "Economic",
-                    "children": [
-                        {"name": "GDP", "value": 8833}
-                   ]
-                }
-            ]
-          };
-            return {
-              title: {
-                text: 'A study on the possible variables related to the pandemic',
-                left: 'center'
-                },
-                tooltip: {
-                    trigger: 'item',
-                    triggerOn: 'mousemove'
-                },
-                series:[
-                    {
-                        type: 'tree',
-                        name: 'tree2',
-                        data: [data2],
-            
-                        top: '20%',
-                        left: '10%',
-                        bottom: '12%',
-                        right: '10%',
-            
-                        symbolSize: 12,
-            
-                        label: {
-                            position: 'left',
-                            verticalAlign: 'middle',
-                            align: 'right'
-                        },
-            
-                        leaves: {
-                            label: {
-                                position: 'right',
-                                verticalAlign: 'middle',
-                                align: 'left'
-                            }
-                        },
-            
-                        expandAndCollapse: true,
-            
-                        animationDuration: 550,
-                        animationDurationUpdate: 750
-                    }
-                ]
-            }
-    }
+          "name": "Pandemic",
+          "label":{"fontSize": 16},
+          "children": [
+              {
+                  "name": "Geographical",
+                  "label":{"fontSize": 16},
+                  "children": [
+                      {"name": "Region Area", "value": 4116,"label":{"fontSize": 16},},
+                      {"name": "Population", "value": 5000,"label":{"fontSize": 16},}
+                  ]
+              },
+              {
+                  "name": "Natural",
+                  "label":{"fontSize": 16},
+                  "children": [
+                      {"name": "UVB Value", "value": 2105,"label":{"fontSize": 16},},
+                      {"name": "Temperature", "value": 1316,"label":{"fontSize": 16},},
+                      {"name": "Dewpoint", "value": 3151,"label":{"fontSize": 16},},
+                 ]
+              },
+              {
+                  "name": "Economic",
+                  "label":{"fontSize": 16},
+                  "children": [
+                      {"name": "GDP", "value": 8833,"label":{"fontSize": 16},}
+                 ]
+              }
+          ]
+        };
+          return {
+            title: {
+              text: 'Study on the Possible Variables Related to the Pandemic',
+              left: 'center'
+              },
+              series:[
+                  {
+                      type: 'tree',
+                      name: 'tree2',
+                      data: [data2],
+          
+                      top: '15%',
+                      left: '30%',
+                      bottom: '10%',
+                      right: '30%',
+          
+                      symbolSize: 12,
+          
+                      label: {
+                          position: 'left',
+                          verticalAlign: 'middle',
+                          align: 'right'
+                      },
+          
+                      leaves: {
+                          label: {
+                              position: 'right',
+                              verticalAlign: 'middle',
+                              align: 'left'
+                          }
+                      },
+          
+                      expandAndCollapse: true,
+          
+                      animationDuration: 550,
+                      animationDurationUpdate: 750
+                  }
+              ]
+          }
+     }
   };
 //   GDP图表
   const getOption2 = () => {
@@ -586,7 +586,80 @@ export default function ScrollableTabsButtonForce() {
             data: data_,
         }]
       }
-  }
+    }
+    else{
+
+        let data2 = {
+            "name": "Pandemic",
+            "label":{"fontSize": 16},
+            "children": [
+                {
+                    "name": "Geographical",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "Region Area", "value": 4116,"label":{"fontSize": 16},},
+                        {"name": "Population", "value": 5000,"label":{"fontSize": 16},}
+                    ]
+                },
+                {
+                    "name": "Natural",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "UVB Value", "value": 2105,"label":{"fontSize": 16},},
+                        {"name": "Temperature", "value": 1316,"label":{"fontSize": 16},},
+                        {"name": "Dewpoint", "value": 3151,"label":{"fontSize": 16},},
+                   ]
+                },
+                {
+                    "name": "Economic",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "GDP", "value": 8833,"label":{"fontSize": 16},}
+                   ]
+                }
+            ]
+          };
+            return {
+              title: {
+                text: 'Study on the Possible Variables Related to the Pandemic',
+                left: 'center'
+                },
+                series:[
+                    {
+                        type: 'tree',
+                        name: 'tree2',
+                        data: [data2],
+            
+                        top: '15%',
+                        left: '30%',
+                        bottom: '10%',
+                        right: '30%',
+            
+                        symbolSize: 12,
+            
+                        label: {
+                            position: 'left',
+                            verticalAlign: 'middle',
+                            align: 'right'
+                        },
+            
+                        leaves: {
+                            label: {
+                                position: 'right',
+                                verticalAlign: 'middle',
+                                align: 'left'
+                            }
+                        },
+            
+                        expandAndCollapse: true,
+            
+                        animationDuration: 550,
+                        animationDurationUpdate: 750
+                    }
+                ]
+            }
+       
+    }
 };
 //   polulation图表
 const getOption3 = () => {
@@ -660,7 +733,80 @@ const getOption3 = () => {
             data: data_,
         }]
       }
-  }
+    }
+    else{
+
+        let data2 = {
+            "name": "Pandemic",
+            "label":{"fontSize": 16},
+            "children": [
+                {
+                    "name": "Geographical",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "Region Area", "value": 4116,"label":{"fontSize": 16},},
+                        {"name": "Population", "value": 5000,"label":{"fontSize": 16},}
+                    ]
+                },
+                {
+                    "name": "Natural",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "UVB Value", "value": 2105,"label":{"fontSize": 16},},
+                        {"name": "Temperature", "value": 1316,"label":{"fontSize": 16},},
+                        {"name": "Dewpoint", "value": 3151,"label":{"fontSize": 16},},
+                   ]
+                },
+                {
+                    "name": "Economic",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "GDP", "value": 8833,"label":{"fontSize": 16},}
+                   ]
+                }
+            ]
+          };
+            return {
+              title: {
+                text: 'Study on the Possible Variables Related to the Pandemic',
+                left: 'center'
+                },
+                series:[
+                    {
+                        type: 'tree',
+                        name: 'tree2',
+                        data: [data2],
+            
+                        top: '15%',
+                        left: '30%',
+                        bottom: '10%',
+                        right: '30%',
+            
+                        symbolSize: 12,
+            
+                        label: {
+                            position: 'left',
+                            verticalAlign: 'middle',
+                            align: 'right'
+                        },
+            
+                        leaves: {
+                            label: {
+                                position: 'right',
+                                verticalAlign: 'middle',
+                                align: 'left'
+                            }
+                        },
+            
+                        expandAndCollapse: true,
+            
+                        animationDuration: 550,
+                        animationDurationUpdate: 750
+                    }
+                ]
+            }
+       
+    }
 };
 //   dew point的图表
 const getOption4 = () => {
@@ -784,76 +930,78 @@ const getOption4 = () => {
         }
     }
     else{
+
         let data2 = {
-          "name": "Pandemic",
-          "children": [
-              {
-                  "name": "Geographical",
-                  "children": [
-                      {"name": "Region Area", "value": 4116},
-                      {"name": "Population", "value": 5000}
-                  ]
-              },
-              {
-                  "name": "Natural",
-                  "children": [
-                      {"name": "UVB Value", "value": 2105},
-                      {"name": "Temperature", "value": 1316},
-                      {"name": "Dewpoint", "value": 3151},
-                 ]
-              },
-              {
-                  "name": "Economic",
-                  "children": [
-                      {"name": "GDP", "value": 8833}
-                 ]
-              }
-          ]
-        };
-          return {
-            title: {
-              text: 'A study on the possible variables related to the pandemic',
-              left: 'center'
-              },
-              tooltip: {
-                  trigger: 'item',
-                  triggerOn: 'mousemove'
-              },
-              series:[
-                  {
-                      type: 'tree',
-                      name: 'tree2',
-                      data: [data2],
-          
-                      top: '20%',
-                      left: '10%',
-                      bottom: '12%',
-                      right: '10%',
-          
-                      symbolSize: 12,
-          
-                      label: {
-                          position: 'left',
-                          verticalAlign: 'middle',
-                          align: 'right'
-                      },
-          
-                      leaves: {
-                          label: {
-                              position: 'right',
-                              verticalAlign: 'middle',
-                              align: 'left'
-                          }
-                      },
-          
-                      expandAndCollapse: true,
-          
-                      animationDuration: 550,
-                      animationDurationUpdate: 750
-                  }
-              ]
-          }
-     }
+            "name": "Pandemic",
+            "label":{"fontSize": 16},
+            "children": [
+                {
+                    "name": "Geographical",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "Region Area", "value": 4116,"label":{"fontSize": 16},},
+                        {"name": "Population", "value": 5000,"label":{"fontSize": 16},}
+                    ]
+                },
+                {
+                    "name": "Natural",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "UVB Value", "value": 2105,"label":{"fontSize": 16},},
+                        {"name": "Temperature", "value": 1316,"label":{"fontSize": 16},},
+                        {"name": "Dewpoint", "value": 3151,"label":{"fontSize": 16},},
+                   ]
+                },
+                {
+                    "name": "Economic",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "GDP", "value": 8833,"label":{"fontSize": 16},}
+                   ]
+                }
+            ]
+          };
+            return {
+              title: {
+                text: 'Study on the Possible Variables Related to the Pandemic',
+                left: 'center'
+                },
+                series:[
+                    {
+                        type: 'tree',
+                        name: 'tree2',
+                        data: [data2],
+            
+                        top: '15%',
+                        left: '30%',
+                        bottom: '10%',
+                        right: '30%',
+            
+                        symbolSize: 12,
+            
+                        label: {
+                            position: 'left',
+                            verticalAlign: 'middle',
+                            align: 'right'
+                        },
+            
+                        leaves: {
+                            label: {
+                                position: 'right',
+                                verticalAlign: 'middle',
+                                align: 'left'
+                            }
+                        },
+            
+                        expandAndCollapse: true,
+            
+                        animationDuration: 550,
+                        animationDurationUpdate: 750
+                    }
+                ]
+            }
+       
+    }
   };
 //   区域面积的图表
 const getOption5 = () => {
@@ -927,7 +1075,80 @@ const getOption5 = () => {
             data: data_,
         }]
       }
-  }
+    }
+    else{
+
+        let data2 = {
+            "name": "Pandemic",
+            "label":{"fontSize": 16},
+            "children": [
+                {
+                    "name": "Geographical",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "Region Area", "value": 4116,"label":{"fontSize": 16},},
+                        {"name": "Population", "value": 5000,"label":{"fontSize": 16},}
+                    ]
+                },
+                {
+                    "name": "Natural",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "UVB Value", "value": 2105,"label":{"fontSize": 16},},
+                        {"name": "Temperature", "value": 1316,"label":{"fontSize": 16},},
+                        {"name": "Dewpoint", "value": 3151,"label":{"fontSize": 16},},
+                   ]
+                },
+                {
+                    "name": "Economic",
+                    "label":{"fontSize": 16},
+                    "children": [
+                        {"name": "GDP", "value": 8833,"label":{"fontSize": 16},}
+                   ]
+                }
+            ]
+          };
+            return {
+              title: {
+                text: 'Study on the Possible Variables Related to the Pandemic',
+                left: 'center'
+                },
+                series:[
+                    {
+                        type: 'tree',
+                        name: 'tree2',
+                        data: [data2],
+            
+                        top: '15%',
+                        left: '30%',
+                        bottom: '10%',
+                        right: '30%',
+            
+                        symbolSize: 12,
+            
+                        label: {
+                            position: 'left',
+                            verticalAlign: 'middle',
+                            align: 'right'
+                        },
+            
+                        leaves: {
+                            label: {
+                                position: 'right',
+                                verticalAlign: 'middle',
+                                align: 'left'
+                            }
+                        },
+            
+                        expandAndCollapse: true,
+            
+                        animationDuration: 550,
+                        animationDurationUpdate: 750
+                    }
+                ]
+            }
+       
+    }
 };
 
   return (
