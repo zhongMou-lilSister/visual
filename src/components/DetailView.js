@@ -85,7 +85,7 @@ export default function ScrollableTabsButtonForce() {
         
         return {
             title: {
-                text: 'Relationship between new cases and temperature',
+                text: `Relationship between new cases and temperature in ${state.region[0][state.left]}`,
                 subtext: 'XXXXX',
                 left: 'center'
             },
@@ -278,7 +278,7 @@ export default function ScrollableTabsButtonForce() {
         
         return {
             title: {
-                text: 'Relationship between new cases and uvb',
+                text: `Relationship between new cases and uvb in ${state.region[0][state.left]}`,
                 subtext: 'XXXXX',
                 left: 'center'
             },

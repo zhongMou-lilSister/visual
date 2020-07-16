@@ -4,13 +4,17 @@ import {store} from "../store";
 
 function AssistView() {
     const {state} = useContext(store);
-    console.log(state.case)
-    return <div>
-    <h3 font="">世界疫情数据可视化</h3>
-    <p>2020.07.10</p>
-    <p>{state.region}</p>
-    console.log(state.region);
-</div>;
+    if (state.left != null){
+        return <div >
+        <h4>2020.07.10 {state.region[0][state.left]}</h4>
+        <h7>({state.latitude[0][state.left]},{state.longitude[0][state.left]})</h7>
+        </div>;
+    }
+    else{
+        return <div>
+        <h4>2020.07.10 Choose a City</h4>
+        </div>;
+    }
 }
 
 export default AssistView;
