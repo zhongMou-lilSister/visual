@@ -1,31 +1,30 @@
-本项目仅限用于2020年浙江大学暑期学校课程项目模板。
+全球新冠疫情数据可视化分析
 
-## 如何启动本项目
+## 数据来源
 
-1. 使用git命令，将本项目同步到本地：
+1. 国外数据：
 
-   `git clone https://github.com/WuJiang5521/ZJU_SummerSchool_ProjectTemplate.git`
+   https://github.com/ryanskene/see19/blob/master/dataset/see19-2020-07-11-11-48-10
    
-2. 在项目文件夹内，使用git命令，修改remote到你们小组的仓库：
+2. 国内数据：
+   
+   https://qianxi.baidu.com
+   
+## 启动项目
+ 
+   `npm start` 来运行项目
 
-   将原来的远程仓库重命名：`git remote rename origin template-origin`
-   
-   添加你的远程仓库地址：`git remote add origin your_remote_url`
-   
-   添加文件修改：`git add .`
-   
-   提交文件修改：`git commit -m "Initial Commit"`
-   
-   上传：`git push -u origin master`
-   
-3. 在项目文件夹内，使用npm运行项目：
+## 项目内容
 
-   安装所有依赖库：`npm install`
-   
-   运行项目：`npm start`
-   
-   如果能正常运行，你应该可以看到浏览器中出现四个区域，每个区域有一个数字0和一个按钮。
-   点击任意按钮都可以使四个数字加一。
+1. 展示温度、UVB、露点(dew point)和全球新增确诊人数的关系
+
+2. 展示GDP、人口、地域面积和总计确诊人数的关系
+
+3. 展示国内出行强度和国内确诊人数的关系
+
+4. 从全球地图的尺度展示各个地域新增确诊人数人数、总计确诊人数、死亡人数
+
+5. 从国内地图的尺度展示出行强度
    
 ## 本项目目前已安装的库
 
