@@ -36,7 +36,7 @@
    `npm install` 
    
    `npm start` 来运行项目
-   
+
 ## 本项目目前已安装的库
 
 1. Material UI
@@ -50,3 +50,6 @@
 1. papaparse
 
    解析.csv文件
+
+## 可视化面板效果图
+![visualization_panel.png](https://s1.ax1x.com/2020/07/17/UyDST1.png)
