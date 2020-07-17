@@ -2,16 +2,17 @@
 
 ## 数据来源
 
-1. 国外数据：
+1. 全球疫情数据：
 
-   https://github.com/ryanskene/see19/blob/master/dataset/see19-2020-07-11-11-48-10
+   https://github.com/ryanskene/see19/blob/master/dataset/see19-2020-07-11-11-48-10.csv
    
-2. 国内数据：
+2. 中国城市的城内出行数据：
    
    https://qianxi.baidu.com
    
 ## 启动项目
- 
+   
+   `npm install` 
    `npm start` 来运行项目
 
 ## 项目内容
