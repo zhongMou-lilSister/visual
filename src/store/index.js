@@ -44,7 +44,7 @@ const reducer = (state, action) => {
         case "Emilia-Romagna": case "Eritrea": case "Espirito Santo": case "Estonia": case "Eswatini": case "Ethiopia": 
         case "Faroe Islands": case "Fiji": case "Finland": case "Florida": case "France": case "French Guiana": 
         case "French Polynesia": case "Friuli Venezia Giulia": case "Fujian": case "Gabon": case "Gambia": case "Gansu": 
-        case "Georgia": case "Georgia": case "Germany": case "Ghana": case "Gibraltar": case "Goias": case "Greece": 
+        case "Georgia": case "Germany": case "Ghana": case "Gibraltar": case "Goias": case "Greece": 
         case "Greenland": case "Guangdong": case "Guangxi": case "Guatemala": case "Guinea": case "Guizhou": case "Guyana": 
         case "Hainan": case "Haiti": case "Hawaii": case "Hebei": case "Heilongjiang": case "Henan": case "Honduras": 
         case "Hong Kong": case "Hubei": case "Hunan": case "Hungary": case "Iceland": case "Idaho": case "Illinois": 
