@@ -1,5 +1,9 @@
 2020年浙江大学暑期课程《数据可视化设计导论》课程设计：全球新冠疫情数据可视化分析
 
+## 可视化面板效果图
+![visualization_panel.jpg](https://s1.ax1x.com/2020/07/17/Uy66xK.jpg)
+  先上效果图hh
+   
 ## 数据来源
 
 1. 全球疫情数据：
@@ -36,7 +40,7 @@
    `npm install` 
    
    `npm start` 来运行项目
-   
+
 ## 本项目目前已安装的库
 
 1. Material UI
